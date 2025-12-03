@@ -1,0 +1,10 @@
+[
+  {"product_id": "P001", "name": "Laptop Gamer X", "category": "Electronics", "price": 1200},
+  {"product_id": "P002", "name": "Wireless Mouse", "category": "Electronics", "price": 25},
+  {"product_id": "P003", "name": "Mechanical Keyboard", "category": "Electronics", "price": 80},
+  {"product_id": "P004", "name": "Running Shoes", "category": "Fashion", "price": 60},
+  {"product_id": "P005", "name": "Cotton T-Shirt", "category": "Fashion", "price": 15},
+  {"product_id": "P006", "name": "Coffee Maker", "category": "Home", "price": 45},
+  {"product_id": "P007", "name": "Blender 3000", "category": "Home", "price": 30},
+  {"product_id": "P008", "name": "Smart Watch", "category": "Electronics", "price": 150}
+]

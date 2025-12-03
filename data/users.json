@@ -1,0 +1,7 @@
+[
+  {"user_id": "U001", "name": "Alice Smith", "region": "North", "segment": "Premium"},
+  {"user_id": "U002", "name": "Bob Jones", "region": "South", "segment": "Standard"},
+  {"user_id": "U003", "name": "Charlie Brown", "region": "East", "segment": "New"},
+  {"user_id": "U004", "name": "Diana Prince", "region": "West", "segment": "Premium"},
+  {"user_id": "U005", "name": "Evan Wright", "region": "North", "segment": "Standard"}
+]
