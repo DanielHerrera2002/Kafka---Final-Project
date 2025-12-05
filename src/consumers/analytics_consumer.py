@@ -1,19 +1,23 @@
 import json
 import os
+import time
 from kafka import KafkaConsumer
 from dotenv import load_dotenv
 
 load_dotenv()
 
+# Configuración
 TOPIC_PRODUCTS = os.getenv('KAFKA_TOPIC_PRODUCTS', 'product-events')
 BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
 
 def analytics_consumer():
+    # Configuración del consumidor con group_id para monitoreo
     consumer = KafkaConsumer(
         TOPIC_PRODUCTS,
         bootstrap_servers=BOOTSTRAP_SERVERS,
         auto_offset_reset='latest',
-        value_deserializer=lambda x: json.loads(x.decode('utf-8'))
+        value_deserializer=lambda x: json.loads(x.decode('utf-8')),
+        group_id='analytics_dashboard'  # <--- ESTO ES LO QUE FALTABA
     )
 
     # Métricas en memoria
@@ -42,7 +46,7 @@ def analytics_consumer():
             # Segmentación de usuarios
             segment = event.get('user_segment', 'Unknown')
             if segment in metrics["by_segment"]:
-                metrics["by_segment"][segment] += 1
+                metrics["by_segment"][segment] = metrics["by_segment"].get(segment, 0) + 1
             else:
                  metrics["by_segment"][segment] = 1
 
